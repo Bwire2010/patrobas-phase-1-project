@@ -103,3 +103,47 @@ body{
                 200ms ease-in-out color;
 }
 
+.search-icon:hover {
+    color: var(--primary-clr);
+    background-color: var(--secondary-clr);
+}
+
+.search-icon:active {
+    transform: scale(0.7) translateY(-50%);
+}
+
+.fav-meals-container {
+    text-align: center;
+    color: black;
+    box-shadow: 0 0 .3rem #A3A3A8;
+    padding: 1rem;
+}
+
+.fav-meals {
+    align-items: center;
+    display: flex;
+    width:auto;
+    column-gap: 1rem;
+    padding: .5rem;
+    overflow-x: scroll;
+    padding-bottom: 1rem;
+}
+
+.fav-meals-container h2 {
+    margin: 1rem;
+    font-weight: 450;
+    text-shadow: 0 0 .4rem #A3A3A8;
+}
+
+.single {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    width: 80px;
+    border-radius: .5rem;
+    position: relative;
+    transition: 200ms ease-in-out background-color;
+}
+
+
