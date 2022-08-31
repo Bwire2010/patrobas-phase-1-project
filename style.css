@@ -170,5 +170,21 @@ body{
 }
 
 
+.text {
+    margin: 0.5rem 0;
+}
+
+.text p {
+   text-overflow: ellipsis; 
+   width: 65px;
+   overflow: hidden;
+   white-space: nowrap;
+   padding: 0 .5rem;
+   font-size: .8rem;
+   text-shadow: 0 0 .3rem #A3A3A8;
+   user-select: none;
+   transition: 200ms ease-in-out color;
+}
+
 
 
