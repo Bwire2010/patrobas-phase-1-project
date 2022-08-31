@@ -1,0 +1,105 @@
+body{
+    display:grid;
+    place-items: center;
+    padding: 3rem 0;
+    background-color: #A3A3A8;
+    min-height: 100vh;
+}
+
+*{
+    margin:0;
+    padding:0;
+    font-family:'poppins',sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-clr:#161616;
+    --primary-rgba-7: rgba(0,0,0,.4);
+
+    --secondary-clr: #fff9f9;
+    --secondary-rgba-3: rgba(255,255,255,.3);
+}
+
+.card {
+    background-color:#A3A3A8;
+    width: clamp(300px,92vw, 400px);
+    border-radius: 1rem;
+    box-shadow: 0 0 .5rem #C0C0C0;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.top {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 1rem;
+}
+
+.light-dark-mode{
+    width:40px;
+    display: flex;
+    aspect-ratio: 1;
+    align-items: center;
+    box-shadow: 0 0 .3rem #C0C0C0;
+    color: white;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 200ms ease-in-out background-color,
+                200ms ease-in-out color;
+}
+
+.light-dark-mode:active {
+    transform: scale(.7);
+}
+
+.light-dark-mode:hover {
+    color: var(--primary-clr);
+    background-color: var(--secondary-clr);
+}
+
+.search-container {
+    position:relative;
+    width: 250px;
+    height: 40px;
+}
+
+.search-container input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    padding: 0 4rem 0 1rem;
+    font-size: 1rem;
+    border-radius: 100vw;
+    border: none;
+    box-shadow: 0 0 .3rem var(--secondary-rgba-3);
+    background-color: transparent;
+    color: #ffffff;
+    transition: 200ms ease-in-out width,
+                200ms ease-in-out padding;
+}
+
+.search-icon {
+    right: 0;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    aspect-ratio: 1;
+    height: 40px;
+    box-shadow: 0 0 .3rem var(--secondary-rgba-3);
+    background-color: #A3A3A8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--secondary-clr);
+    border-radius: 50%;
+    transition: 200ms ease-in-out background-color,
+                200ms ease-in-out color;
+}
+
