@@ -48,6 +48,7 @@ function addMeal (meal) {
             btn.setAttribute('class','fa-regular fa-heart')
             removeMealLs(meal.idMeal)
         }
+        fetchFavMeals()
     })
 }
 //creating local storage for the meal list
@@ -70,6 +71,8 @@ function getMealLs () {
 //fetching the  meals from the list
 
 async function fetchFavMeals () {
+    fav_meals_container.innerHTML = '';
+
     const mealsIds = getMealLs();
     const meals = [];
     for (let i = 0; i < mealsIds.length; i++){
@@ -97,5 +100,20 @@ function addMealToFav (meal) {
                 <i class="fa-solid fa-x"></i>
             </div>
     `
+    const x = fav_meals.querySelector('.fa-x');
+    x.addEventListener('click', () => {
+        removeMealLs(meal.idMeal)
+
+        const heart_btns = document.querySelectorAll('.fa-heart');
+        heart_btns.forEach(heart_btn => {
+            heart_btn.setAttribute('class','fa-regular fa-heart');
+        })
+        fetchFavMeals()
+    })
+
     fav_meals_container.appendChild(fav_meals)
 }
+
+// Every moment we fetchFavMeals first we need to clear the container
+//That can be achived by clicking X for each meal to remove the meal from the favorite meals
+
