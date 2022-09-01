@@ -4,6 +4,7 @@ const fav_meals_container = document.querySelector ('.fav-meals')
 getRandomMeal()
 fetchFavMeals()
 
+//fetching API from TheMealDB
 async function getRandomMeal (){
     const resp = await fetch ('https://www.themealdb.com/api/json/v1/1/random.php');
     const respData =await resp.json()
