@@ -115,7 +115,7 @@ body{
 .fav-meals-container {
     text-align: center;
     color: #161616;
-    box-shadow: 0 0 .3rem #A3A3A8;
+    box-shadow: 0 0 .3rem #161616;
     padding: 1rem;
 }
 
@@ -132,7 +132,7 @@ body{
 .fav-meals-container h2 {
     margin: 1rem;
     font-weight: 450;
-    text-shadow: 0 0 .4rem #A3A3A8;
+    text-shadow: 0 0 .4rem #fff9f9;
 }
 
 .single {
@@ -220,5 +220,64 @@ body{
 ::-webkit-scrollbar-thumb {
     border-radius: 100vw;
     background-color: #000000;
+}
+
+.meal {
+    display:flex;
+    padding: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.meals-container h2 {
+    margin-top: 1rem;
+    font-weight: 400;
+    color: #000000;
+    text-align: center;
+    text-shadow: 0 0 .4rem #fff9f9;
+}
+
+.meal-card {
+    width: calmp(300px, 60vw, 400px);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 .4rem #161616;
+    transition: 200ms ease-in-out background-color;
+}
+
+.meal-card-img-container {
+    height: 230px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.meal-card-img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.meal-name {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    color: #000000;
+    font-size: 1.1rem;
+    text-shadow: 0 0 .3rem #fff9f9;
+    transition: 200ms ease-in-out color,
+                200ms ease-in-out text-shadow;
+}
+
+.meal-name i {
+    text-shadow: none;
+    color: red;
+    cursor: pointer;
+}
+
+.meal-card:hover {
+    background-color: #ffffff;
 }
 
