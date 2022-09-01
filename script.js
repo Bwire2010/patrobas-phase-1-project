@@ -1,6 +1,9 @@
-const mealEl_container =document.querySelector('.meal')
+const mealEl_container = document.querySelector('.meal')
+const fav_meals_container = document.querySelector ('.fav-meals')
 
 getRandomMeal()
+fetchFavMeals()
+
 async function getRandomMeal (){
     const resp = await fetch ('https://www.themealdb.com/api/json/v1/1/random.php');
     const respData =await resp.json()
@@ -9,9 +12,13 @@ async function getRandomMeal (){
     addMeal (random_meal)
 }
 
-// async function getMealById (id){
-
-// }
+async function getMealById (id){
+    const resp = await fetch (`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+    const respData =await resp.json()
+    const meal = respData.meals[0];
+    
+    return meal;
+}
 
 // async function getMealsBySearch(term){
 
@@ -42,7 +49,7 @@ function addMeal (meal) {
         }
     })
 }
-
+//creating local storage for the meal list
 function addMealLs (mealID) {
     const mealIds = getMealLs()
     localStorage.setItem('mealIds', JSON.stringify([...mealIds, mealID]))
@@ -59,4 +66,35 @@ function getMealLs () {
     return mealIds === null ? [] : mealIds
 }
 
+//fetching the  meals from the list
 
+async function fetchFavMeals () {
+    const mealsIds = getMealLs();
+    const meals = [];
+    for (let i = 0; i < mealsIds.length; i++){
+        const mealID = mealsIds[i];
+        meal = await getMealById(mealID)
+        addMealToFav(meal)
+        meals.push(meal)
+    }
+
+}
+ //showwing them to the screen
+
+function addMealToFav (meal) {
+    const fav_meals = document.createElement('div');
+    fav_meals.innerHTML = `
+            <div class="single">
+                <div class="top">
+                    <div class="img-container">
+                         <img src="${meal.strMealThumb}">
+                    </div>
+                    <div class="text">
+                        <p>${meal.strMeal}</p>
+                     </div>
+                </div>
+                <i class="fa-solid fa-x"></i>
+            </div>
+    `
+    fav_meals_container.appendChild(fav_meals)
+}
