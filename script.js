@@ -35,8 +35,28 @@ function addMeal (meal) {
     btn.addEventListener('click',() => {
         if (btn.classList.contains('fa-regular')){
             btn.setAttribute('class', 'fa-solid fa-heart')
+            addMealLs(meal.idMeal)
+        } else {
+            btn.setAttribute('class','fa-regular fa-heart')
+            removeMealLs(meal.idMeal)
         }
     })
+}
+
+function addMealLs (mealID) {
+    const mealIds = getMealLs()
+    localStorage.setItem('mealIds', JSON.stringify([...mealIds, mealID]))
+}
+
+function removeMealLs(mealID){
+    const mealIds = getMealLs()
+    localStorage.setItem('mealIds', JSON.stringify(mealIds.filter(id => id !== mealID)))
+}
+
+function getMealLs () {
+    const mealIds = JSON.parse(localStorage.getItem('mealIds'));
+
+    return mealIds === null ? [] : mealIds
 }
 
 
