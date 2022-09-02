@@ -27,20 +27,10 @@ body{
     width: clamp(300px,92vw, 400px);
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
-    box-shadow: 0 0 .5rem #C0C0C0;
+    box-shadow: 0 0 .5rem #ffffff;
     overflow: hidden;
     margin: 0 auto;
-}
-
-.meals-container {
-    background-color:#A3A3A8;
-    width: clamp(300px,92vw, 400px);
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    box-shadow: 0 0 .5rem #C0C0C0;
-    overflow: hidden;
-    margin: 0 auto;
-}
+} 
 
 
 .top {
@@ -92,7 +82,7 @@ body{
     border: none;
     box-shadow: 0 0 .3rem var(--secondary-rgba-3);
     background-color: transparent;
-    color: #ffffff;
+    color: #000000;
     transition: 200ms ease-in-out width,
                 200ms ease-in-out padding;
 }
