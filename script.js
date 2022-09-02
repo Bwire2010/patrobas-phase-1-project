@@ -1,8 +1,13 @@
 const mealEl_container = document.querySelector('.meal')
-const fav_meals_container = document.querySelector ('.fav-meals')
+const fav_meals_container = document.querySelector ('.fav-meals');
 
-const search_input = document.querySelector('.search-input')
-const search_icon = document.querySelector('.search-icon')
+const search_input = document.querySelector('.search-input');
+const search_icon = document.querySelector('.search-icon');
+
+
+const popup_container = document.querySelector('.pop-up-container');
+const close_popup_btn = document.querySelector('.pop-up > i');
+const popup = document.querySelector('.pop-up-inner');
 
 
 getRandomMeal()
@@ -91,7 +96,7 @@ async function fetchFavMeals () {
     }
 
 }
- //showwing them to the screen
+
 
 function addMealToFav (meal) {
     const fav_meals = document.createElement('div');
@@ -119,6 +124,10 @@ function addMealToFav (meal) {
         fetchFavMeals()
     })
 
+     fav_meals.firstChild.nextSibling.firstChild.nextSibling.addEventListener('click',() => {
+         showMealPopup(meal)
+     })
+
     fav_meals_container.appendChild(fav_meals)
 }
 
@@ -139,4 +148,54 @@ search_icon.addEventListener('click', async () => {
         mealEl_container.innerHTML = '';
     }
 })
+
+//Adding the pop up feature
+close_popup_btn.addEventListener('click',() => {
+    popup_container.style.display = 'none';
+})
+
+function showMealPopup (meal) {
+    popup.innerHTML = ''
+
+    const newPopup = document.createElement('div');
+    newPopup.classList.add('pop-up-inner');
+
+    const ingredients = [];
+    for (let i =1; i <= 20; i++){
+        if(meal[`strIngredient${i}`]){
+            ingredients.push(`${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`)
+        } else{
+            break
+        }
+    }
+
+    newPopup.innerHTML = `
+    <div class="left">
+        <div class="meal-card">
+            <div class="meal-card-img-container">
+                <img src= "${meal.strMealThumb}">
+            </div>
+            <div class="meal-name">
+                <p> ${meal.strMeal}</p>
+                <i class="fa-regular fa-heart"></i>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div>
+            <h2>Instructions</h2>
+            <p class="meal-info">${meal.strInstructions}</p>
+        </div>
+        <div>
+            <h2>Ingredients/Measures </h2>
+            <ul>
+                ${ingredients.map(e => `<li>${e}</li>`).join('')}
+            </ul>
+        </div>
+    </div>
+
+    `
+    popup.appendChild(newPopup);
+    popup_container.style.display = 'flex';
+}
 
