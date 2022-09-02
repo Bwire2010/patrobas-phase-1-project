@@ -1,6 +1,10 @@
 const mealEl_container = document.querySelector('.meal')
 const fav_meals_container = document.querySelector ('.fav-meals')
 
+const search_input = document.querySelector('.search-input')
+const search_icon = document.querySelector('.search-icon')
+
+
 getRandomMeal()
 fetchFavMeals()
 
@@ -21,9 +25,13 @@ async function getMealById (id){
     return meal;
 }
 
-// async function getMealsBySearch(term){
+async function getMealsBySearch(term){
+    const resp = await fetch (`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`);
+    const respData =await resp.json()
+    const meals = respData.meals;
 
-// }
+    return meals;
+}
 
 function addMeal (meal) {
     const meal_card = document.createElement('div');
@@ -114,6 +122,21 @@ function addMealToFav (meal) {
     fav_meals_container.appendChild(fav_meals)
 }
 
-// Every moment we fetchFavMeals first we need to clear the container
-//That can be achived by clicking X for each meal to remove the meal from the favorite meals
+
+//search meal bar so we can get meal by search
+
+search_icon.addEventListener('click', async () => {
+    mealEl_container.innerHTML = '';
+    const searchVal = search_input.value;
+    const meals = await getMealsBySearch(searchVal)
+    if (meals) {
+        meals.forEach(meal => {
+            addMeal(meal)
+        })
+       document.querySelector('.meals-container > h2').innerText = 'Search Results...'
+    } else{
+        document.querySelector('.meals-container > h2').innerText = 'No Meals Found'
+        mealEl_container.innerHTML = '';
+    }
+})
 
