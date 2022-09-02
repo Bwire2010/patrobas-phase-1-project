@@ -21,7 +21,7 @@ Random meals options
 2. The app user has the option of saving a meal from the "Random Meal" section on his/her favorite meal section by clicking on the heart icon besides the meal name. When the user clicks the heart icon the meal get listed on his/her "Favorite Meals" Section. 
 3.  The the Top-Notch Cooking app also gives its user the option of searching for their preffered meal.  When a user searches for a particular meal, (for example Cheese) a list of the meal related to cheese recipes get listed under the heading 'Search Results' just below the Favorite meal section. 
 4. The app user has the option of listing the searched meal recipe to his 'favorite meal section' by clickig the heart icon beside the name of the searched meals. 
-5. If the searched meal is not available,  the app will display 'No Meals Found'.
+5. If the searched meal is not available (For instance UGALI),  the app will display 'No Meals Found'.
 6. The app user has the option of removing a meal recipe from his or her favorite list by clicking on the 'X' icon displayed just below the recipe image and name in the 'Favorite List' section.
 7. To view the instructions and ingredient/measures of a meal recipe, a user can click on the image or name of his/her favorite meal (on the favorite meal section) and the instructions will pop up on the screen.
 8. To get away from the pop up screen with instructions/ingredients a user can click the 'X' icon on the top right corner.
