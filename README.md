@@ -1,11 +1,12 @@
 # patrobas-phase-1-project
+Done by Patrobas Bwire Onyura
 # Project name
 TOP-NOTCH COOKING
 This is a mini-project is a Simple Recipe App. This is a simple web application that allows the user to find, store and manage their recipe list. The application is developed using HTML, CSS, and JavaScript.  It has a simple and pleasant user interface and  user-friendly functionalities.
 
 # About the Recipe App
 1. This project is developed using the following: HTML, CSS & JavaScript.
-2. The application data which entails the recipes is fetched from "TheMealDB" API.
+2. The application data is fetched from "TheMealDB" API.
 
 
 # App Features
