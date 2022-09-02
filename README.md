@@ -19,7 +19,7 @@ Random meals options
 
 1. Every time  a user refreshes the Top-Notch Cooking recipe web application, it shows a random meal recipe on the "Random Meal section" of the app. 
 2. The app user has the option of saving a meal from the "Random Meal" section on his/her favorite meal section by clicking on the heart icon besides the meal name. When the user clicks the heart icon the meal get listed on his/her "Favorite Meals" Section. 
-3.  The the Top-Notch Cooking app also gives its user the option of searching for their preffered meal.  When a user searches for a particular meal, (for example Cheese) a list of the meal related meal recipes get listed under the heading 'Search Results' just below the Favorite meal section. 
+3.  The the Top-Notch Cooking app also gives its user the option of searching for their preffered meal.  When a user searches for a particular meal, (for example Cheese) a list of the meal related to cheese recipes get listed under the heading 'Search Results' just below the Favorite meal section. 
 4. The app user has the option of listing the searched meal recipe to his 'favorite meal section' by clickig the heart icon beside the name of the searched meals. 
 5. If the searched meal is not available,  the app will display 'No Meals Found'.
 6. The app user has the option of removing a meal recipe from his or her favorite list by clicking on the 'X' icon displayed just below the recipe image and name in the 'Favorite List' section.
@@ -27,7 +27,7 @@ Random meals options
 8. To get away from the pop up screen with instructions/ingredients a user can click the 'X' icon on the top right corner.
 # Note
  1. To get a random meal the user just needs to refresh the application every time.
- 2. A user as an option to save unlimted number of favorite meals recipe to his her 'Favorite Meal' section. 
+ 2. A user as an option to save unlimted number of favorite meals recipe to his or her 'Favorite Meal' section. 
 # Live link on Github
 https://bwire2010.github.io/patrobas-phase-1-project/ 
 # License MIT License
